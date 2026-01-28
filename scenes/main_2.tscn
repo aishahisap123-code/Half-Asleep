@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://nxbnu7i0ccjt"]
+
+[ext_resource type="PackedScene" uid="uid://b6vb2wn1vlpll" path="res://scenes/parallax_background.tscn" id="1_owpos"]
+[ext_resource type="PackedScene" uid="uid://bv58dedr3xfgm" path="res://scenes/ground.tscn" id="2_f241j"]
+[ext_resource type="PackedScene" uid="uid://dq48vfthg8qh2" path="res://scenes/girl.tscn" id="3_43ty5"]
+
+[node name="main2" type="Node"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_owpos")]
+
+[node name="ground" parent="." instance=ExtResource("2_f241j")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_43ty5")]
+position = Vector2(102, 560.00006)
+scale = Vector2(3.5, 3.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(642, 370)

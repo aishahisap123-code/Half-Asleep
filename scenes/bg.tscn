@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://rbctf61t7l8l"]
+
+[ext_resource type="Texture2D" uid="uid://btbvc3030847l" path="res://Assets/images/Background/Clouds/Clouds 7/1.png" id="1_5vsr6"]
+[ext_resource type="Texture2D" uid="uid://bdx2rmk1tctab" path="res://Assets/images/Background/Clouds/Clouds 7/2.png" id="2_w68nc"]
+[ext_resource type="Texture2D" uid="uid://bo3wymdlnj51t" path="res://Assets/images/Background/Clouds/Clouds 7/3.png" id="3_bf1jy"]
+[ext_resource type="Texture2D" uid="uid://cb3hf8x7iyrg6" path="res://Assets/images/Background/Clouds/Clouds 7/4.png" id="4_r6ch1"]
+
+[node name="Parallax2D" type="ParallaxBackground"]
+scale = Vector2(2.25, 2.25)
+transform = Transform2D(2.25, 0, 0, 2.25, 0, 0)
+follow_viewport_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5vsr6")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_w68nc")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("3_bf1jy")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("4_r6ch1")
+centered = false

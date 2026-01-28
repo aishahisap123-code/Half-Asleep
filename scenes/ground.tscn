@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv58dedr3xfgm"]
+
+[ext_resource type="Texture2D" uid="uid://qk7hnyfogvg5" path="res://Assets/images/Background/Clouds/Clouds 3/floorspooky.png" id="1_pybca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi8v4"]
+size = Vector2(2583, 104)
+
+[node name="ground" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5.0000076, 223)
+scale = Vector2(1.6822916, 0.9785155)
+texture = ExtResource("1_pybca")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1292.5, 676)
+shape = SubResource("RectangleShape2D_mi8v4")

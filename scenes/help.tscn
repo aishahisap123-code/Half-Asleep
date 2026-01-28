@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnshph8wf6v6k"]
+
+[ext_resource type="Script" uid="uid://crcni0q8scq8v" path="res://scripts/help.gd" id="1_2c3wl"]
+[ext_resource type="Texture2D" uid="uid://do4nlouup8lx8" path="res://Assets/Sprite sheets/Setting menu.png" id="1_50phg"]
+[ext_resource type="FontFile" uid="uid://8lp6kpsti265" path="res://Assets/fonts/PixelDigivolve-mOm9.ttf" id="2_chmrd"]
+[ext_resource type="AudioStream" uid="uid://bsiwiipof2hvr" path="res://Assets/sounds/Dreamer's Domain.wav" id="3_chmrd"]
+[ext_resource type="Texture2D" uid="uid://jpklhsmgdgh7" path="res://Assets/Sprite sheets/Sprite sheet for Basic Pack.png" id="5_hq4sr"]
+[ext_resource type="Script" uid="uid://bgix5b0wwwx6v" path="res://scripts/back.gd" id="6_k347r"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2by0i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mpb58"]
+texture = ExtResource("5_hq4sr")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3xxq"]
+texture = ExtResource("5_hq4sr")
+region_rect = Rect2(869, 102, 22, 22)
+
+[node name="help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2c3wl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.9098039, 0.8117647, 0.6509804, 1)
+layout_mode = 0
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 1332.0
+offset_bottom = 762.0
+texture = SubResource("CanvasTexture_2by0i")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 256.0
+offset_top = -31.0
+offset_right = 1028.0
+offset_bottom = 719.0
+texture = ExtResource("1_50phg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 373.0
+offset_top = 78.0
+offset_right = 909.0
+offset_bottom = 620.0
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_chmrd")
+theme_override_font_sizes/font_size = 71
+text = "CONtROLS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_chmrd")
+theme_override_font_sizes/font_size = 30
+text = "Jump: Up Arrow, W Key, Space
+Run LEFT: Left arrow, a key
+run right: right arrow, d key
+"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_chmrd")
+volume_db = 10.0
+autoplay = true
+
+[node name="back" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1176.0
+offset_top = 13.0
+offset_right = 1267.0
+offset_bottom = 104.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mpb58")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i3xxq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_i3xxq")
+script = ExtResource("6_k347r")
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

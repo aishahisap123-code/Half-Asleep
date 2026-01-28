@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://bpiwuxe7jeqr8"]
+
+[ext_resource type="Texture2D" uid="uid://boxuokmaxvcq3" path="res://Assets/Sprite sheets/realsetting.png" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://bp4ebt4x0pu84" path="res://scripts/settings.gd" id="1_gis3k"]
+[ext_resource type="Script" uid="uid://dc2wp1jccj1f3" path="res://scripts/audio_control.gd" id="2_r6d6q"]
+[ext_resource type="FontFile" uid="uid://8lp6kpsti265" path="res://Assets/fonts/PixelDigivolve-mOm9.ttf" id="3_6wm04"]
+[ext_resource type="Texture2D" uid="uid://jpklhsmgdgh7" path="res://Assets/Sprite sheets/Sprite sheet for Basic Pack.png" id="4_es4n0"]
+[ext_resource type="Script" uid="uid://bgix5b0wwwx6v" path="res://scripts/back.gd" id="5_gis3k"]
+[ext_resource type="AudioStream" uid="uid://bsiwiipof2hvr" path="res://Assets/sounds/Dreamer's Domain.wav" id="7_83j8s"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r6d6q"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6wm04"]
+color = Color(0.9098039, 0.8117647, 0.6509804, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_f4mfi"]
+color = Color(0.6666667, 0.4745098, 0.34901962, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83j8s"]
+texture = ExtResource("4_es4n0")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjs24"]
+texture = ExtResource("4_es4n0")
+region_rect = Rect2(869, 102, 22, 22)
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gis3k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.9098039, 0.8117647, 0.6509804, 1)
+layout_mode = 0
+offset_right = 1303.0
+offset_bottom = 766.0
+texture = SubResource("CanvasTexture_r6d6q")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 262.0
+offset_top = -8.0
+offset_right = 975.0
+offset_bottom = 722.0
+texture = ExtResource("1_5p8wc")
+
+[node name="audioControl" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 377.0
+offset_right = 827.0
+offset_bottom = 393.0
+theme_override_styles/slider = SubResource("StyleBoxLine_6wm04")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_f4mfi")
+min_value = -80.0
+max_value = 0.0
+value = -20.0
+script = ExtResource("2_r6d6q")
+
+[node name="audioControl2" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 294.0
+offset_right = 826.0
+offset_bottom = 310.0
+theme_override_styles/slider = SubResource("StyleBoxLine_6wm04")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_f4mfi")
+min_value = -80.0
+max_value = 0.0
+value = -30.0
+script = ExtResource("2_r6d6q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 264.0
+offset_right = 543.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("3_6wm04")
+theme_override_font_sizes/font_size = 30
+text = "MUSIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 340.0
+offset_right = 543.0
+offset_bottom = 426.0
+theme_override_fonts/font = ExtResource("3_6wm04")
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1176.0
+offset_top = 13.0
+offset_right = 1267.0
+offset_bottom = 104.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_83j8s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gjs24")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gjs24")
+script = ExtResource("5_gis3k")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1176, 13)
+stream = ExtResource("7_83j8s")
+volume_db = 10.0
+autoplay = true
+
+[connection signal="value_changed" from="audioControl" to="audioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="audioControl2" to="audioControl2" method="_on_value_changed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

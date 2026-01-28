@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfsxtfjn4qydx"]
+
+[ext_resource type="PackedScene" uid="uid://bs5xw6lreseuw" path="res://scenes/levels/menu.tscn" id="1_lxd5o"]
+[ext_resource type="PackedScene" uid="uid://djs3k7728w6xw" path="res://scenes/main.tscn" id="2_vdejo"]
+[ext_resource type="PackedScene" uid="uid://b6xddcqmx600h" path="res://scenes/gamedone.tscn" id="3_ynx48"]
+
+[node name="Half-Asleep" type="Node2D"]
+
+[node name="Menu" parent="." instance=ExtResource("1_lxd5o")]
+
+[node name="Main" parent="." instance=ExtResource("2_vdejo")]
+
+[node name="Menu2" parent="." instance=ExtResource("3_ynx48")]

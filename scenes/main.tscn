@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://djs3k7728w6xw"]
+
+[ext_resource type="Script" uid="uid://c0j6xfq5d066b" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://qfoyiy1vpaf3" path="res://scenes/levels/level1.tscn" id="1_o5qli"]
+[ext_resource type="FontFile" uid="uid://cboowp7eneq1p" path="res://Assets/fonts/Square-Black.ttf" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://bj6w4ks1qw2sg" path="res://Assets/sounds/Delve Within The Soul.wav" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://jpklhsmgdgh7" path="res://Assets/Sprite sheets/Sprite sheet for Basic Pack.png" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://bgix5b0wwwx6v" path="res://scripts/back.gd" id="6_o6xl0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
+bg_color = Color(0.46463996, 0.62035936, 0.7495454, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.60649055, 0.8324007, 0.9880275, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tipki"]
+texture = ExtResource("5_tefeu")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85g3d"]
+texture = ExtResource("5_tefeu")
+region_rect = Rect2(869, 102, 22, 22)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0wfyh")
+
+[node name="LevelRoot" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScorePanel" type="Panel" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0wfyh")
+
+[node name="ScoreLabel" type="Label" parent="HUD/ScorePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 32
+text = "SCORE: 0"
+
+[node name="Fade" type="ColorRect" parent="HUD"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09239707, 0.09239706, 0.09239706, 1)
+
+[node name="back" type="Button" parent="HUD"]
+texture_filter = 1
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 52.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tipki")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_85g3d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_85g3d")
+script = ExtResource("6_o6xl0")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_tbgi4")
+pitch_scale = 1.4
+autoplay = true
+bus = &"music"
+
+[connection signal="pressed" from="HUD/back" to="." method="_on_back_pressed"]

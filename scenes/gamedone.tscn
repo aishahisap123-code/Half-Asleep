@@ -1,0 +1,225 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6xddcqmx600h"]
+
+[ext_resource type="Script" uid="uid://c2axso6badih4" path="res://scripts/menu.gd" id="1_arsyy"]
+[ext_resource type="AudioStream" uid="uid://bvj0v73si06cb" path="res://Assets/sounds/Soaring In Ambition.wav" id="2_b0bg6"]
+[ext_resource type="FontFile" uid="uid://8lp6kpsti265" path="res://Assets/fonts/PixelDigivolve-mOm9.ttf" id="3_leaiq"]
+[ext_resource type="Texture2D" uid="uid://jpklhsmgdgh7" path="res://Assets/Sprite sheets/Sprite sheet for Basic Pack.png" id="4_hq7ac"]
+[ext_resource type="Texture2D" uid="uid://crvrah74427x" path="res://Assets/Sprite sheets/UI Big Play Button.png" id="5_0250d"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g1ckg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dexxl"]
+texture = ExtResource("4_hq7ac")
+region_rect = Rect2(645, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnrjr"]
+texture = ExtResource("4_hq7ac")
+region_rect = Rect2(677, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_varmo"]
+texture = ExtResource("4_hq7ac")
+region_rect = Rect2(772, 163, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_swjeh"]
+texture = ExtResource("4_hq7ac")
+region_rect = Rect2(804, 165, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oosx4"]
+texture = ExtResource("5_0250d")
+region_rect = Rect2(3, 34, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apwh8"]
+texture = ExtResource("5_0250d")
+region_rect = Rect2(99, 36, 90, 25)
+
+[node name="gamedone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_arsyy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_b0bg6")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.9529412, 0.8980392, 0.7607843, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+offset_left = -162.28
+offset_top = -218.40001
+offset_right = 1512.9199
+offset_bottom = 1141.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_g1ckg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 153.0
+offset_top = 198.0
+offset_right = 1173.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.28212458, 0.16051629, 0.31205812, 1)
+theme_override_colors/font_outline_color = Color(0.73397094, 0.5825074, 0.7818936, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("3_leaiq")
+theme_override_font_sizes/font_size = 125
+text = "YOU'RE AWAKE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 465.0
+offset_top = 402.0
+offset_right = 844.0
+offset_bottom = 639.0
+texture = ExtResource("4_hq7ac")
+region_rect = Rect2(-12763, -4480, 6986, 2659)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.49100003
+anchor_right = 0.50200003
+anchor_bottom = 0.49100003
+offset_left = -252.16202
+offset_top = -121.560005
+offset_right = 222.83798
+offset_bottom = 89.038994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="buttonContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="bottomButtonContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="settingsButton" type="Button" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_dexxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dnrjr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dnrjr")
+
+[node name="quitButton" type="Button" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_varmo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_swjeh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_swjeh")
+
+[node name="statDisplay" type="VBoxContainer" parent="NinePatchRect/MarginContainer2"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="NinePatchRect/MarginContainer2/statDisplay"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 70)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_oosx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_apwh8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_apwh8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 351.0
+offset_right = 824.0
+offset_bottom = 393.0
+theme_override_colors/font_color = Color(0.73333335, 0.58431375, 0.78039217, 1)
+theme_override_colors/font_outline_color = Color(0.28235295, 0.16078432, 0.3137255, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_leaiq")
+theme_override_font_sizes/font_size = 35
+text = "Thanks for playing !"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 467.0
+offset_right = 386.0
+offset_bottom = 511.0
+theme_override_colors/font_color = Color(0.73333335, 0.58431375, 0.78039217, 1)
+theme_override_colors/font_outline_color = Color(0.28235295, 0.16078432, 0.3137255, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_leaiq")
+theme_override_font_sizes/font_size = 36
+text = "_"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 493.0
+offset_right = 334.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0.73333335, 0.58431375, 0.78039217, 1)
+theme_override_colors/font_outline_color = Color(0.28235295, 0.16078432, 0.3137255, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_leaiq")
+theme_override_font_sizes/font_size = 26
+text = "want to play again"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 478.0
+offset_right = 417.0
+offset_bottom = 531.0
+theme_override_colors/font_color = Color(0.73333335, 0.58431375, 0.78039217, 1)
+theme_override_colors/font_outline_color = Color(0.28235295, 0.16078432, 0.3137255, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_leaiq")
+theme_override_font_sizes/font_size = 45
+text = ">"
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/statDisplay/StartButton" to="." method="_on_start_pressed"]

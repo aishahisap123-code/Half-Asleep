@@ -1,0 +1,223 @@
+[gd_scene load_steps=17 format=3 uid="uid://bs5xw6lreseuw"]
+
+[ext_resource type="Texture2D" uid="uid://cf3hjmx8lul1" path="res://Assets/images/Background/menu please work.png" id="1_dex4k"]
+[ext_resource type="Script" uid="uid://c2axso6badih4" path="res://scripts/menu.gd" id="1_e3kp8"]
+[ext_resource type="FontFile" uid="uid://8lp6kpsti265" path="res://Assets/fonts/PixelDigivolve-mOm9.ttf" id="2_e3kp8"]
+[ext_resource type="Texture2D" uid="uid://jpklhsmgdgh7" path="res://Assets/Sprite sheets/Sprite sheet for Basic Pack.png" id="3_5au3h"]
+[ext_resource type="Texture2D" uid="uid://crvrah74427x" path="res://Assets/Sprite sheets/UI Big Play Button.png" id="5_bfhna"]
+[ext_resource type="AudioStream" uid="uid://bvj0v73si06cb" path="res://Assets/sounds/Soaring In Ambition.wav" id="6_0cngb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jn8sx"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(709, 164, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6ftq"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(741, 166, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6qf5j"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(645, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lt4mj"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(677, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dexxl"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(645, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnrjr"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(677, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_varmo"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(772, 163, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_swjeh"]
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(804, 165, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oosx4"]
+texture = ExtResource("5_bfhna")
+region_rect = Rect2(3, 34, 90, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_apwh8"]
+texture = ExtResource("5_bfhna")
+region_rect = Rect2(99, 36, 90, 25)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e3kp8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0cngb")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 10.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dex4k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.34600002
+anchor_right = 0.5
+anchor_bottom = 0.34600002
+offset_left = -433.5
+offset_top = -74.12001
+offset_right = 433.5
+offset_bottom = 73.87999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.28212458, 0.16051629, 0.31205812, 1)
+theme_override_colors/font_outline_color = Color(0.73397094, 0.5825074, 0.7818936, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("2_e3kp8")
+theme_override_font_sizes/font_size = 125
+text = "Half-Asleep"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 465.0
+offset_top = 402.0
+offset_right = 796.0
+offset_bottom = 562.0
+texture = ExtResource("3_5au3h")
+region_rect = Rect2(-12763, -4480, 6986, 2659)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.49100003
+anchor_right = 0.50200003
+anchor_bottom = 0.49100003
+offset_left = -252.16202
+offset_top = -121.560005
+offset_right = 222.83798
+offset_bottom = 89.038994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="buttonContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="topButtonContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="helpButton" type="Button" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/topButtonContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_jn8sx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w6ftq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w6ftq")
+
+[node name="pauseButton" type="Button" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/topButtonContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_6qf5j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lt4mj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lt4mj")
+
+[node name="bottomButtonContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="settingsButton" type="Button" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_dexxl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dnrjr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dnrjr")
+
+[node name="quitButton" type="Button" parent="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_varmo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_swjeh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_swjeh")
+
+[node name="statDisplay" type="VBoxContainer" parent="NinePatchRect/MarginContainer2"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="NinePatchRect/MarginContainer2/statDisplay"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 70)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_oosx4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_apwh8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_apwh8")
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer2/statDisplay"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19866458, 0.20677811, 0.41405886, 1)
+theme_override_colors/font_outline_color = Color(0.9098039, 0.5294118, 0.69411767, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("2_e3kp8")
+theme_override_font_sizes/font_size = 24
+text = "GAME MADE BY: AISHAH"
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/topButtonContainer/helpButton" to="." method="_on_help_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/topButtonContainer/pauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/MarginContainer/buttonContainer/bottomButtonContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer2/statDisplay/StartButton" to="." method="_on_start_pressed"]

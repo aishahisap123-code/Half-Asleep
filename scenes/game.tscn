@@ -1,0 +1,189 @@
+[gd_scene load_steps=19 format=3 uid="uid://damhxur1n2nbx"]
+
+[ext_resource type="Script" uid="uid://btglnxwtfkq4g" path="res://scenes/game.gd" id="1_ir15t"]
+[ext_resource type="Texture2D" uid="uid://d10o76yt5xmde" path="res://Assets/game/Screenshot 2026-01-28 205315.png" id="1_trtic"]
+[ext_resource type="Texture2D" uid="uid://c5jp4145nj6t7" path="res://Assets/game/Screenshot 2026-01-28 205330.png" id="2_ir15t"]
+[ext_resource type="Texture2D" uid="uid://bsobtxl5mtanj" path="res://Assets/game/Screenshot 2026-01-28 205351.png" id="3_ca42v"]
+[ext_resource type="Texture2D" uid="uid://3y0a5lq6p5f7" path="res://Assets/game/Screenshot 2026-01-28 205422.png" id="4_rysoc"]
+[ext_resource type="Texture2D" uid="uid://b1rrkkhbodnsg" path="res://Assets/game/Screenshot 2026-01-28 205732.png" id="5_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://g6v4nrfilpj2" path="res://Assets/game/Screenshot 2026-01-28 205952.png" id="6_264po"]
+[ext_resource type="Texture2D" uid="uid://c5gdimtj3wxik" path="res://Assets/game/Screenshot 2026-01-28 210200.png" id="7_1kice"]
+[ext_resource type="FontFile" uid="uid://8lp6kpsti265" path="res://Assets/fonts/PixelDigivolve-mOm9.ttf" id="8_5newe"]
+[ext_resource type="Texture2D" uid="uid://bda3ceduiyvyc" path="res://Assets/animations/breathing-idle/south/frame_000.png" id="9_37s47"]
+[ext_resource type="Texture2D" uid="uid://dhlxpddrqxhmb" path="res://Assets/animations/breathing-idle/south-east/frame_000.png" id="10_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://dwxr8pfsjtkqm" path="res://Assets/animations/breathing-idle/north-west/frame_000.png" id="11_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://dl24rjxsm7jbq" path="res://Assets/images/Collectibles/star.png" id="12_pl11u"]
+[ext_resource type="Texture2D" uid="uid://jpklhsmgdgh7" path="res://Assets/Sprite sheets/Sprite sheet for Basic Pack.png" id="13_bhx41"]
+[ext_resource type="Script" uid="uid://bgix5b0wwwx6v" path="res://scripts/back.gd" id="14_qnb83"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sww3w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_suyxu"]
+texture = ExtResource("13_bhx41")
+region_rect = Rect2(837, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgl2t"]
+texture = ExtResource("13_bhx41")
+region_rect = Rect2(869, 102, 22, 22)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ir15t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.8627451, 0.7254902, 0.5411765, 1)
+layout_mode = 0
+offset_left = 16.0
+offset_top = -10.0
+offset_right = 1326.0
+offset_bottom = 739.0
+texture = SubResource("CanvasTexture_sww3w")
+
+[node name="Screenshot20260128205315" type="Sprite2D" parent="."]
+position = Vector2(247, 190)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_trtic")
+
+[node name="Screenshot20260128205330" type="Sprite2D" parent="."]
+position = Vector2(1008, 382)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ir15t")
+
+[node name="Screenshot20260128205351" type="Sprite2D" parent="."]
+position = Vector2(1007, 191)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_ca42v")
+
+[node name="Screenshot20260128205422" type="Sprite2D" parent="."]
+position = Vector2(624, 191)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_rysoc")
+
+[node name="Screenshot20260128205732" type="Sprite2D" parent="."]
+position = Vector2(623, 382)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_ssvqc")
+
+[node name="Screenshot20260128205952" type="Sprite2D" parent="."]
+position = Vector2(624, 572)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_264po")
+
+[node name="Screenshot20260128210200" type="Sprite2D" parent="."]
+position = Vector2(246, 380)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_1kice")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 565.0
+offset_top = 43.0
+offset_right = 691.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0.67058825, 0.47843137, 0.3529412, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("8_5newe")
+theme_override_font_sizes/font_size = 34
+text = "levels"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 935.0
+offset_top = 43.0
+offset_right = 1061.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0.67058825, 0.47843137, 0.3529412, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("8_5newe")
+theme_override_font_sizes/font_size = 34
+text = "buttons"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 188.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0.67058825, 0.47843137, 0.3529412, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("8_5newe")
+theme_override_font_sizes/font_size = 34
+text = "MENUS"
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 136.0
+offset_top = 486.0
+offset_right = 342.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0.67058825, 0.47843137, 0.3529412, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("8_5newe")
+theme_override_font_sizes/font_size = 34
+text = "CHARACTER"
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 906.0
+offset_top = 496.0
+offset_right = 1112.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_colors/font_outline_color = Color(0.67058825, 0.47843137, 0.3529412, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("8_5newe")
+theme_override_font_sizes/font_size = 34
+text = "Collectibles"
+
+[node name="Frame000" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(238.99997, 612)
+scale = Vector2(3.107143, 3.4439993)
+texture = ExtResource("9_37s47")
+
+[node name="Frame001" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(165.00002, 608.00006)
+scale = Vector2(3.214286, 3.3794632)
+texture = ExtResource("10_bt5mj")
+
+[node name="Frame002" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(319.00003, 607.00006)
+scale = Vector2(3.0491064, 3.2098217)
+texture = ExtResource("11_e1j6l")
+
+[node name="Star" type="Sprite2D" parent="."]
+modulate = Color(1, 0.13725491, 1, 1)
+texture_filter = 1
+position = Vector2(1032, 607)
+scale = Vector2(2.8281252, 2.9999986)
+texture = ExtResource("12_pl11u")
+
+[node name="back" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 11.0
+offset_right = 1270.0
+offset_bottom = 76.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_suyxu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sgl2t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sgl2t")
+script = ExtResource("14_qnb83")
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

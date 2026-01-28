@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbi6iqpu0buwf"]
+
+[ext_resource type="Texture2D" uid="uid://4jafi7uiqouc" path="res://Assets/images/Background/Clouds/Clouds 3/spikes.png" id="1_5pg7g"]
+
+[node name="spikes" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_5pg7g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.050735474, 1.6020813)
+scale = Vector2(0.99950784, 1.0208334)
+polygon = PackedVector2Array(-18, -14, -16, -16, -31, -53, -36, -9, -65, -31, -55, -3, -51, 5, -5, 5, 44, 4, 62, -31, 38, -11, 31, -48, 17, -11, -1, -58, -13, -12, -17, -17, -1, 0)
